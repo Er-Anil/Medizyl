@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/p1"
-        android:layout_width="87dp"
-        android:layout_height="102dp"
+        android:layout_width="84dp"
+        android:layout_height="85dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -18,7 +18,7 @@
         android:background="@drawable/icon9"
         android:onClick="pre"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,8 +26,8 @@
 
     <Button
         android:id="@+id/m1"
-        android:layout_width="102dp"
-        android:layout_height="101dp"
+        android:layout_width="95dp"
+        android:layout_height="89dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -35,7 +35,7 @@
         android:background="@drawable/map1"
         android:onClick="map"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintHorizontal_bias="0.871"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -51,14 +51,14 @@
         android:layout_marginTop="8dp"
         android:text="PRESCRIPTION"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.039"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.024"
-        app:layout_constraintTop_toBottomOf="@+id/p1" />
+        app:layout_constraintTop_toBottomOf="@+id/p1"
+        app:layout_constraintVertical_bias="0.051" />
 
     <TextView
         android:id="@+id/textView5"
@@ -70,12 +70,12 @@
         android:layout_marginTop="8dp"
         android:text="HOSPITALS"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintHorizontal_bias="0.966"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.03"
-        app:layout_constraintTop_toBottomOf="@+id/m1" />
+        app:layout_constraintTop_toBottomOf="@+id/m1"
+        app:layout_constraintVertical_bias="0.033" />
 </android.support.constraint.ConstraintLayout>
