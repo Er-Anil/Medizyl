@@ -1,5 +1,6 @@
 package com.example.vineeth.medizyl12;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,6 +33,7 @@ public class Presc extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presc);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         cb1 = (CheckBox) findViewById(R.id.checkBox);
         cb2 = (CheckBox) findViewById(R.id.checkBox2);
@@ -392,8 +394,6 @@ public class Presc extends AppCompatActivity {
         tv7.setVisibility(View.INVISIBLE);
         tv8.setVisibility(View.INVISIBLE);
         tv9.setVisibility(View.INVISIBLE);
-
-
 
     }
 
