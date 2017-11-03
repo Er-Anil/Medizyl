@@ -45,7 +45,9 @@ public class Main2Activity extends AppCompatActivity {
             wv.getSettings().setPluginState(WebSettings.PluginState.ON);
         }*/
         wv.setWebChromeClient(new WebChromeClient());
-
+        wv.loadUrl("http://maps.google.com/maps?q=mylocation&mrt=yp&sll=lat,lon&output=kml");
+        Toast.makeText(Main2Activity.this,"Setting GPS",Toast.LENGTH_SHORT).show();
+        Toast.makeText(Main2Activity.this,"Fetching location",Toast.LENGTH_LONG).show();
 
     }
     public void hospital(View view) {
