@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f2f2f2"
+    android:background="?android:attr/colorButtonNormal"
     tools:context="com.example.vineeth.medizyl12.MainActivity">
 
     <Button
@@ -15,8 +15,11 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="166dp"
-        android:background="@drawable/icon9"
+        android:background="@drawable/ic_local_hospital_black_48dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:elevation="0dp"
         android:onClick="pre"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -32,7 +35,8 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="166dp"
-        android:background="@drawable/map1"
+        android:background="@drawable/ic_map_black_48dp"
+        android:backgroundTint="@color/colorPrimary"
         android:onClick="map"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.871"
