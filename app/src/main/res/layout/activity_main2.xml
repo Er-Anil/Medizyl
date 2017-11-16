@@ -73,8 +73,8 @@
 
     <WebView
         android:id="@+id/webView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="403dp"
+        android:layout_height="580dp"
         tools:layout_editor_absoluteX="-6dp"
         tools:layout_editor_absoluteY="-7dp" />
 

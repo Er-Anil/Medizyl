@@ -1,12 +1,14 @@
 package com.example.vineeth.medizyl12;
 
 import android.content.pm.ActivityInfo;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +17,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Presc extends AppCompatActivity {
 
@@ -29,11 +32,18 @@ public class Presc extends AppCompatActivity {
     int first,sec,third,four,five,six,total;
     RadioButton rb1,rb2,rb3,rb4,rb5,rb6,rb7,rb8,rb9,rb10,rb11,rb12,rb13,rb14,rb15,rb16,rb17,rb18,rb19;
 
+    ProgressBar pb;
+    int Pstatus = 0;
+
+    Handler handler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presc);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        pb = (ProgressBar) findViewById(R.id.progressBar2);
 
         cb1 = (CheckBox) findViewById(R.id.checkBox);
         cb2 = (CheckBox) findViewById(R.id.checkBox2);
@@ -144,6 +154,9 @@ public class Presc extends AppCompatActivity {
         rb18.setVisibility(View.INVISIBLE);
         rb19.setVisibility(View.INVISIBLE);
         btn6.setVisibility(View.INVISIBLE);
+
+        //progress bar
+        pb.setVisibility(View.INVISIBLE);
     }
 
     public void Ques2(View view)
@@ -208,6 +221,9 @@ public class Presc extends AppCompatActivity {
         tv8.setVisibility(View.INVISIBLE);
         tv9.setVisibility(View.INVISIBLE);
 
+        //
+        pb.setVisibility(View.INVISIBLE);
+
     }
 
     public void Ques3(View view)
@@ -270,7 +286,8 @@ public class Presc extends AppCompatActivity {
         tv8.setVisibility(View.INVISIBLE);
         tv9.setVisibility(View.INVISIBLE);
 
-
+        //
+        pb.setVisibility(View.INVISIBLE);
     }
 
     public void Ques4(View view)
@@ -333,6 +350,8 @@ public class Presc extends AppCompatActivity {
         tv8.setVisibility(View.INVISIBLE);
         tv9.setVisibility(View.INVISIBLE);
 
+        //
+        pb.setVisibility(View.INVISIBLE);
     }
 
     public void Ques5(View view)
@@ -395,6 +414,8 @@ public class Presc extends AppCompatActivity {
         tv8.setVisibility(View.INVISIBLE);
         tv9.setVisibility(View.INVISIBLE);
 
+        //
+        pb.setVisibility(View.INVISIBLE);
     }
 
 
@@ -445,8 +466,66 @@ public class Presc extends AppCompatActivity {
         rb19.setVisibility(View.INVISIBLE);
         btn6.setVisibility(View.INVISIBLE);
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while(Pstatus <100){
+                    Pstatus +=1;
 
-        //Generate
+                    // Try to sleep the thread for 20 milliseconds
+                    try{
+                        Thread.sleep(200);
+                    }catch(InterruptedException e){
+                        e.printStackTrace();
+                    }
+
+                    // Update the progress bar
+
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            pb.setProgress(Pstatus);
+                            // Show the progress on TextView
+                            //tv.setText(progressStatus+"");
+                        }
+                    });
+                }
+
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(20100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                handler.post(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        pb.setVisibility(View.INVISIBLE);
+                        tv1.setVisibility(View.VISIBLE);
+                        tv2.setVisibility(View.VISIBLE);
+                        tv3.setVisibility(View.VISIBLE);
+                        tv4.setVisibility(View.VISIBLE);
+                        tv5.setVisibility(View.VISIBLE);
+                        tv6.setVisibility(View.VISIBLE);
+                        tv7.setVisibility(View.VISIBLE);
+                        tv8.setVisibility(View.VISIBLE);
+                        tv9.setVisibility(View.VISIBLE);
+
+                    }
+                });
+
+            }
+        }).start();
+
+
+
+        /*Generate
         tv1.setVisibility(View.VISIBLE);
         tv2.setVisibility(View.VISIBLE);
         tv3.setVisibility(View.VISIBLE);
@@ -455,7 +534,7 @@ public class Presc extends AppCompatActivity {
         tv6.setVisibility(View.VISIBLE);
         tv7.setVisibility(View.VISIBLE);
         tv8.setVisibility(View.VISIBLE);
-        tv9.setVisibility(View.VISIBLE);
+        tv9.setVisibility(View.VISIBLE);*/
 
 
 
