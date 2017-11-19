@@ -1048,33 +1048,39 @@ public class Presc extends AppCompatActivity {
         if(rb1.isSelected())
         {
             //a1 = rb1.getText().toString();
+            tt7.setText("1 days");
 
         }
 
         if(rb2.isChecked())
         {
             //a2 = rb2.getText().toString();
+            tt7.setText("2 days");
         }
 
         if(rb3.isChecked())
         {
             //a3 = rb3.getText().toString();
+            tt7.setText("3 days,preferred to meet doctor");
         }
 
         if(rb4.isChecked())
         {
             //a4 = rb4.getText().toString();
+            tt7.setText("6 days,preferred to meet doctor");
         }
 
         if(rb5.isChecked())
         {
             //a5 = rb5.getText().toString();
-            //tt7.setText("10days,preffered to meet doctor!");
+            tt7.setText("7 days,preffered to meet doctor!");
         }
 
         if(rb6.isChecked())
         {
             //a6 = rb6.getText().toString();
+            tt7.setText("7 days,prefferd to meet doctor");
+
         }
 
         if(rb7.isChecked())
@@ -1148,14 +1154,14 @@ public class Presc extends AppCompatActivity {
         {
             tt11.setText("500mg each"+"");
         }
-        if(rb1.isChecked()||rb2.isChecked())
+        /*if(rb1.isChecked()||rb2.isChecked())
         {
             tt7.setText("2 days");
         }
         if(rb3.isChecked()||rb4.isChecked())
         {
             tt7.setText("7-days,preffered to meet doctor");
-        }
+        }*/
 
         /*else {
             Toast.makeText(getApplicationContext(), "Select Options!",Toast.LENGTH_LONG).show();
