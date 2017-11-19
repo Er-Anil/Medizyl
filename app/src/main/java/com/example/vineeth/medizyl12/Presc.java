@@ -1142,11 +1142,11 @@ public class Presc extends AppCompatActivity {
         }
         if(rb6.isChecked()||rb7.isChecked())
         {
-            tt11.setText("250mg"+"each");
+            tt11.setText("250mg each"+"");
         }
         if((rb9.isChecked()||rb10.isChecked())||rb11.isChecked())
         {
-            tt11.setText("500mg"+"each");
+            tt11.setText("500mg each"+"");
         }
         if(rb1.isChecked()||rb2.isChecked())
         {
