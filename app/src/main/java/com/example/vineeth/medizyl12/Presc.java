@@ -793,33 +793,33 @@ public class Presc extends AppCompatActivity {
         if (cb1.isChecked()) {
             text1 = cb1.getText().toString();
             tt5.setText(text1 + "");
-            tt9.setText("Paracetamol / Dolo");
+            tt9.setText("Paracetamol/Dolo/Aspirin");
 
         }
         if (cb2.isChecked()) {
             text2 = cb2.getText().toString();
             tt5.setText(text2 + "");
-            tt9.setText("Vertigon");
+            tt9.setText("Vertigon/Flurbiprofen");
         }
         if (cb3.isChecked()) {
             text3 = cb3.getText().toString();
             tt5.setText(text3 + "");
-            tt9.setText("Cyclopalm");
+            tt9.setText("Cyclopalm/dolopar");
         }
         if (cb4.isChecked()) {
             text4 = cb4.getText().toString();
             tt5.setText(text4 + "");
-            tt9.setText("Coughx");
+            tt9.setText("Morphine/Advil/Tylenol");
         }
         if (cb5.isChecked()) {
             text5 = cb5.getText().toString();
             tt5.setText(text5 + "");
-            tt9.setText("citrizen");
+            tt9.setText("Leo-citrizen");
         }
         if (cb6.isChecked()) {
             text6 = cb6.getText().toString();
             tt5.setText(text6 + "");
-            tt9.setText("Eldofer");
+            tt9.setText("Codeine/Eldofer/Becelac");
         }
 
         //
@@ -828,53 +828,70 @@ public class Presc extends AppCompatActivity {
 
             com11 = cb1.getText().toString() + " " + cb2.getText().toString();
             tt5.setText(com11 + "");
+            tt9.setText("Metamizole");
         }
         if ((cb1.isChecked() && cb3.isChecked()) || (cb3.isChecked() && cb1.isChecked())) {
             com12 = cb1.getText().toString() + " " + cb3.getText().toString();
             tt5.setText(com12 + "");
+            tt9.setText("Dolopar & Aspirin");
         }
         if ((cb1.isChecked() && cb4.isChecked()) || (cb4.isChecked() && cb1.isChecked())) {
             com13 = cb1.getText().toString() + " " + cb4.getText().toString();
             tt5.setText(com13 + "");
+            tt9.setText("Dolo & Morphine");
         }
         if ((cb1.isChecked() && cb5.isChecked()) || (cb5.isChecked() && cb1.isChecked())) {
             com14 = cb1.getText().toString() + " " + cb5.getText().toString();
             tt5.setText(com14 + "");
+            tt9.setText("Aspirin & leo-citrizen");
+
         }
         if ((cb1.isChecked() && cb6.isChecked()) || (cb6.isChecked() && cb1.isChecked())) {
             com15 = cb1.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(com15 + "");
+            tt9.setText("Dolo & Andial");
         }
         //Double COndition
         if ((cb2.isChecked() && cb3.isChecked()) || (cb3.isChecked() && cb2.isChecked())) {
             com23 = cb2.getText().toString() + " " + cb3.getText().toString();
             tt5.setText(com23 + "");
+            tt9.setText("Fenoprofen & Dolopar");
         }
         if ((cb2.isChecked() && cb4.isChecked()) || (cb4.isChecked() && cb2.isChecked())) {
             com24 = cb2.getText().toString() + " " + cb4.getText().toString();
             tt5.setText(com24 + "");
+            tt9.setText("Flubriprofen & Naprosyb");
         }
         if ((cb2.isChecked() && cb5.isChecked()) || (cb5.isChecked() && cb2.isChecked())) {
             com25 = cb2.getText().toString() + " " + cb5.getText().toString();
             tt5.setText(com25 + "");
+            tt9.setText("Flubriprofen & leocitrizen/Actifed");
+
         }
         if ((cb2.isChecked() && cb6.isChecked()) || (cb6.isChecked() && cb2.isChecked())) {
             com26 = cb2.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(com26 + "");
+            tt9.setText("Flubriprofen & Becelac");
+
         }
 
         //
         if ((cb3.isChecked() && cb4.isChecked()) || (cb4.isChecked() && cb3.isChecked())) {
             com34 = cb3.getText().toString() + " " + cb4.getText().toString();
             tt5.setText(com34 + "");
+            tt9.setText("Dolopar & Motrin");
+
         }
         if ((cb3.isChecked() && cb5.isChecked()) && (cb5.isChecked() && cb3.isChecked())) {
             com35 = cb3.getText().toString() + " " + cb5.getText().toString();
             tt5.setText(com35 + "");
+            tt9.setText("Dolopar & leocitrizen");
         }
         if ((cb3.isChecked() && cb6.isChecked()) || (cb6.isChecked() && cb3.isChecked())) {
             com36 = cb3.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(com36 + "");
+            tt9.setText("Dolopar & Eldofer");
+
         }
 
         //
@@ -882,15 +899,19 @@ public class Presc extends AppCompatActivity {
         if ((cb4.isChecked() && cb5.isChecked()) || (cb5.isChecked() && cb4.isChecked())) {
             com45 = cb4.getText().toString() + " " + cb5.getText().toString();
             tt5.setText(com45 + "");
+            tt9.setText("Motrin & leocitrizen");
+
         }
         if ((cb4.isChecked() && cb6.isChecked()) || (cb6.isChecked() && cb4.isChecked())) {
             com46 = cb4.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(com46 + "");
+            tt9.setText("Motrin & eldofer");
         }
 
         if ((cb5.isChecked() && cb6.isChecked()) || (cb6.isChecked() && cb5.isChecked())) {
             com56 = cb5.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(com56 + "");
+            tt9.setText("leocitrizen & eldofer");
         }
 
 
@@ -899,48 +920,58 @@ public class Presc extends AppCompatActivity {
         if ((cb1.isChecked() && cb2.isChecked()) && cb3.isChecked()) {
             tri11 = cb1.getText().toString() + " " + cb2.getText().toString() + " " + cb3.getText().toString();
             tt5.setText(tri11 + "");
+            tt9.setText("Aspirin,Flubriprofen,Doloper");
         }
         if ((cb1.isChecked() && cb3.isChecked()) && cb4.isChecked()) {
             tri12 = cb1.getText().toString() + " " + cb3.getText().toString() + " " + cb4.getText().toString();
             tt5.setText(tri12 + "");
+            tt9.setText("Dolo,Eldofer,Tylenol,");
         }
         if ((cb1.isChecked() && cb4.isChecked()) && cb5.isChecked()) {
             tri13 = cb1.getText().toString() + " " + cb4.getText().toString() + " " + cb5.getText().toString();
             tt5.setText(tri13 + "");
+            tt9.setText("Dolo,advil,leocitrizen");
         }
         if ((cb1.isChecked() && cb5.isChecked()) && cb6.isChecked()) {
             tri14 = cb1.getText().toString() + " " + cb5.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(tri14 + "");
+            tt9.setText("Dolo,leocitirizen,Eldofer");
         }
 
         //
         if ((cb2.isChecked() && cb3.isChecked()) && cb4.isChecked()) {
             tri21 = cb2.getText().toString() + " " + cb3.getText().toString() + " " + cb4.getText().toString();
             tt5.setText(tri21 + "");
+            tt9.setText("Flubriprofen,Dolopar,Naprosyn");
         }
         if ((cb2.isChecked() && cb4.isChecked()) && cb5.isChecked()) {
             tri22 = cb2.getText().toString() + " " + cb4.getText().toString() + " " + cb5.getText().toString();
             tt5.setText(tri22 + "");
+            tt9.setText("Flubriprofen,Naprosyn,leocitrizen");
         }
         if ((cb2.isChecked() && cb5.isChecked()) && cb6.isChecked()) {
             tri23 = cb2.getText().toString() + " " + cb5.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(tri23 + "");
+            tt9.setText("Flubriprofen,leocitrizen,Becelac");
         }
 
         //
         if ((cb3.isChecked() && cb4.isChecked()) && cb5.isChecked()) {
             tri31 = cb3.getText().toString() + " " + cb4.getText().toString() + " " + cb5.getText().toString();
             tt5.setText(tri31 + "");
+            tt9.setText("Dolopar,Naprosyn,leocitrizen");
         }
         if ((cb3.isChecked() && cb5.isChecked()) && cb6.isChecked()) {
             tri32 = cb3.getText().toString() + " " + cb5.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(tri32 + "");
+            tt9.setText("dolopar,leocitrizen,Andial");
         }
         //
 
         if ((cb4.isChecked() && cb5.isChecked()) && cb6.isChecked()) {
             tri41 = cb4.getText().toString() + " " + cb5.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(tri41 + "");
+            tt9.setText("Morphine,leocitrizen,Becelac");
         }
 
         //
@@ -948,14 +979,17 @@ public class Presc extends AppCompatActivity {
         if (((cb1.isChecked() && cb2.isChecked()) && cb3.isChecked()) && cb4.isChecked()) {
             four1 = cb1.getText().toString() + " " + cb2.getText().toString() + " " + cb3.getText().toString() + " " + cb4.getText().toString();
             tt5.setText(four1 + " ");
+            tt9.setText("Aspirin,Flubriprofen,Doloper,Naprosyn");
         }
         if (((cb1.isChecked() && cb3.isChecked()) && cb4.isChecked()) && cb5.isChecked()) {
             four2 = cb1.getText().toString() + " " + cb3.getText().toString() + " " + cb4.getText().toString() + " " + cb5.getText().toString();
             tt5.setText(four2 + " ");
+            tt9.setText("Paracetamol,Dolopar,Naprosun,leocitrizen");
         }
         if (((cb1.isChecked() && cb4.isChecked()) && cb5.isChecked()) && cb6.isChecked()) {
             four3 = cb1.getText().toString() + " " + cb4.getText().toString() + " " + cb5.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(four3 + " ");
+            tt9.setText("Paracetamol,Naprosyn,leocitrize,eldofer");
         }
 
         //
@@ -963,27 +997,32 @@ public class Presc extends AppCompatActivity {
         if (((cb2.isChecked() && cb3.isChecked()) && cb4.isChecked()) && cb5.isChecked()) {
             fr22 = cb2.getText().toString() + " " + cb3.getText().toString() + " " + cb4.getText().toString() + " " + cb5.getText().toString();
             tt5.setText(fr22 + "");
+            tt9.setText("Flubriprofen,Doloper,Naprosyn,leocitrizen");
 
         }
         if (((cb2.isChecked() && cb4.isChecked()) && cb5.isChecked()) && cb6.isChecked()) {
             fr23 = cb2.getText().toString() + " " + cb4.getText().toString() + " " + cb5.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(fr23 + "");
+            tt9.setText("Flubriprofen,Naprosyn,leocitrize,eldofer");
         }
         //
 
         if (((cb3.isChecked() && cb4.isChecked()) && cb5.isChecked()) && cb6.isChecked()) {
             fr31 = cb3.getText().toString() + " " + cb4.getText().toString() + " " + cb5.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(fr31 + "");
+            tt9.setText("Dolopar,Naprosyn,leocitrizen,Becelac");
         }
         //
 
         if ((((cb1.isChecked() && cb2.isChecked()) && cb3.isChecked()) && cb4.isChecked()) && cb5.isChecked()) {
             fr41 = cb1.getText().toString() + " " + cb2.getText().toString() + " " + cb3.getText().toString() + " " + cb4.getText().toString() + " " + cb5.getText().toString();
             tt5.setText(fr41 + "");
+            tt9.setText("Acetaminophen,Doloper,leocitrizen");
         }
         if ((((cb1.isChecked() && cb3.isChecked()) && cb4.isChecked()) && cb5.isChecked()) && cb6.isChecked()) {
             fr42 = cb1.getText().toString() + " " + cb3.getText().toString() + " " + cb4.getText().toString() + " " + cb5.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(fr42 + "");
+            tt9.setText("Acetaminophen,Doloper,leocitrizen,Becelac");
         }
 
         //
@@ -991,6 +1030,7 @@ public class Presc extends AppCompatActivity {
         if ((((cb2.isChecked() && cb3.isChecked()) && cb4.isChecked()) && cb5.isChecked()) && cb6.isChecked()) {
             fr51 = cb2.getText().toString() + " " + cb3.getText().toString() + " " + cb4.getText().toString() + " " + cb5.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(fr51 + "");
+            tt9.setText(",Acetaminophen,Doloper,leocitrizen,Becelac");
         }
 
         //
@@ -998,6 +1038,7 @@ public class Presc extends AppCompatActivity {
         if (((((cb1.isChecked() && cb2.isChecked()) && cb3.isChecked()) && cb4.isChecked()) && cb5.isChecked()) && cb6.isChecked()) {
             fr61 = cb1.getText().toString() + " " + cb2.getText().toString() + " " + cb3.getText().toString() + " " + cb4.getText().toString() + " " + cb5.getText().toString() + " " + cb6.getText().toString();
             tt5.setText(fr61 + "");
+            tt9.setText(",AcetaminophrnDoloper,leocitrizen,Becelac");
         }
 
     }
@@ -1101,11 +1142,11 @@ public class Presc extends AppCompatActivity {
         }
         if(rb6.isChecked()||rb7.isChecked())
         {
-            tt11.setText("250mg"+"");
+            tt11.setText("250mg"+"each");
         }
         if((rb9.isChecked()||rb10.isChecked())||rb11.isChecked())
         {
-            tt11.setText("500mg"+"");
+            tt11.setText("500mg"+"each");
         }
         if(rb1.isChecked()||rb2.isChecked())
         {

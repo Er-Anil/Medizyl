@@ -95,13 +95,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:onClick="click"
-        android:text="Cough"
+        android:text="BodyPains"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintLeft_toRightOf="@+id/checkBox3"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.077"
         app:layout_constraintTop_toBottomOf="@+id/checkBox2"
-        app:layout_constraintLeft_toRightOf="@+id/checkBox3" />
+        app:layout_constraintVertical_bias="0.077" />
 
     <CheckBox
         android:id="@+id/checkBox5"
@@ -735,7 +735,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/ctitle1"
             android:layout_toRightOf="@+id/cvimage1"
-            android:text="22days"
+            android:text="1Day"
             android:textColor="#A64D69"
             android:textSize="22sp" />
     </RelativeLayout>
