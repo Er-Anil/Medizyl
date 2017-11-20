@@ -12,8 +12,10 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Presc extends AppCompatActivity {
@@ -29,6 +31,7 @@ public class Presc extends AppCompatActivity {
     int first,sec,third,four,five,six,total;
     RadioButton rb1,rb2,rb3,rb4,rb5,rb6,rb7,rb8,rb9,rb10,rb11,rb12,rb13,rb14,rb15,rb16,rb17,rb18,rb19;
     ImageView iv,iv2,iv3,iv4,iv5;
+    RadioGroup rg,rg1,rg2,rg3;
 
     //LinearLayout ll;
     RelativeLayout rr1,rr2,rr3,rr4;
@@ -48,6 +51,11 @@ public class Presc extends AppCompatActivity {
 
         pb = (ProgressBar) findViewById(R.id.progressBar2);
        // cv = (CardView) findViewById(R.id.cview);
+
+        rg = (RadioGroup) findViewById(R.id.radioGroup);
+        rg1 = (RadioGroup) findViewById(R.id.radioGroup2);
+        rg3 = (RadioGroup) findViewById(R.id.radioGroup4);
+        rg2=(RadioGroup) findViewById(R.id.radioGroup3);
 
         cb1 = (CheckBox) findViewById(R.id.checkBox);
         cb2 = (CheckBox) findViewById(R.id.checkBox2);
@@ -238,11 +246,14 @@ public class Presc extends AppCompatActivity {
 
         //cv.setVisibility(View.INVISIBLE);
 
+
     }
 
     public void Ques2(View view)
     {
-        //disabling first question
+        if (((((cb1.isChecked() || cb2.isChecked()) || cb3.isChecked()) || cb4.isChecked()) || cb5.isChecked()) || cb6.isChecked()) {
+
+            //disabling first question
         cb1.setVisibility(View.INVISIBLE);
         cb2.setVisibility(View.INVISIBLE);
         cb3.setVisibility(View.INVISIBLE);
@@ -328,417 +339,436 @@ public class Presc extends AppCompatActivity {
         rr1.setVisibility(View.INVISIBLE);
         rr2.setVisibility(View.INVISIBLE);
         rr3.setVisibility(View.INVISIBLE);
-        rr4.setVisibility(View.INVISIBLE);
+        rr4.setVisibility(View.INVISIBLE);}
+    else {
+    Toast.makeText(Presc.this,"Atleast,select oe option!",Toast.LENGTH_LONG).show();
+    }
+    }
 
         //cv.setVisibility(View.INVISIBLE);
         //cbtnn.setVisibility(View.INVISIBLE);
 
 
-    }
+
 
     public void Ques3(View view)
     {
-        //disabling first question
-        cb1.setVisibility(View.INVISIBLE);
-        cb2.setVisibility(View.INVISIBLE);
-        cb3.setVisibility(View.INVISIBLE);
-        cb4.setVisibility(View.INVISIBLE);
-        cb5.setVisibility(View.INVISIBLE);
-        cb6.setVisibility(View.INVISIBLE);
-        tv.setVisibility(View.INVISIBLE);
-        btn.setVisibility(View.INVISIBLE);
+        if(rg2.getCheckedRadioButtonId()!= -1) {
 
-        //diabling secondquestion
-        q1.setVisibility(View.INVISIBLE);
-        rb1.setVisibility(View.INVISIBLE);
-        rb2.setVisibility(View.INVISIBLE);
-        rb3.setVisibility(View.INVISIBLE);
-        rb4.setVisibility(View.INVISIBLE);
-        rb5.setVisibility(View.INVISIBLE);
-        btn3.setVisibility(View.INVISIBLE);
+            //disabling first question
+            cb1.setVisibility(View.INVISIBLE);
+            cb2.setVisibility(View.INVISIBLE);
+            cb3.setVisibility(View.INVISIBLE);
+            cb4.setVisibility(View.INVISIBLE);
+            cb5.setVisibility(View.INVISIBLE);
+            cb6.setVisibility(View.INVISIBLE);
+            tv.setVisibility(View.INVISIBLE);
+            btn.setVisibility(View.INVISIBLE);
 
-
-        //enabling third question
-        q2.setVisibility(View.VISIBLE);
-        rb6.setVisibility(View.VISIBLE);
-        rb7.setVisibility(View.VISIBLE);
-        rb8.setVisibility(View.VISIBLE);
-        rb9.setVisibility(View.VISIBLE);
-        rb10.setVisibility(View.VISIBLE);
-        rb11.setVisibility(View.VISIBLE);
-        btn4.setVisibility(View.VISIBLE);
-
-        //diabling fourth queston
-        q3.setVisibility(View.INVISIBLE);
-        rb12.setVisibility(View.INVISIBLE);
-        rb13.setVisibility(View.INVISIBLE);
-        rb14.setVisibility(View.INVISIBLE);
-        rb15.setVisibility(View.INVISIBLE);
-        rb16.setVisibility(View.INVISIBLE);
-        rb17.setVisibility(View.INVISIBLE);
-        btn5.setVisibility(View.INVISIBLE);
-
-        //disabling 5th ques
-        q4.setVisibility(View.INVISIBLE);
-        rb18.setVisibility(View.INVISIBLE);
-        rb19.setVisibility(View.INVISIBLE);
-        btn6.setVisibility(View.INVISIBLE);
+            //diabling secondquestion
+            q1.setVisibility(View.INVISIBLE);
+            rb1.setVisibility(View.INVISIBLE);
+            rb2.setVisibility(View.INVISIBLE);
+            rb3.setVisibility(View.INVISIBLE);
+            rb4.setVisibility(View.INVISIBLE);
+            rb5.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
 
 
-        //Generate
-        tv1.setVisibility(View.INVISIBLE);
-        tv2.setVisibility(View.INVISIBLE);
-        tv3.setVisibility(View.INVISIBLE);
-        tv4.setVisibility(View.INVISIBLE);
-        tv5.setVisibility(View.INVISIBLE);
-        tv6.setVisibility(View.INVISIBLE);
-        tv7.setVisibility(View.INVISIBLE);
-        tv8.setVisibility(View.INVISIBLE);
-        tv9.setVisibility(View.INVISIBLE);
+            //enabling third question
+            q2.setVisibility(View.VISIBLE);
+            rb6.setVisibility(View.VISIBLE);
+            rb7.setVisibility(View.VISIBLE);
+            rb8.setVisibility(View.VISIBLE);
+            rb9.setVisibility(View.VISIBLE);
+            rb10.setVisibility(View.VISIBLE);
+            rb11.setVisibility(View.VISIBLE);
+            btn4.setVisibility(View.VISIBLE);
 
-        //
-        pb.setVisibility(View.INVISIBLE);
-        ttv.setVisibility(View.INVISIBLE);
-        ttv2.setVisibility(View.INVISIBLE);
-        iv.setVisibility(View.INVISIBLE);
+            //diabling fourth queston
+            q3.setVisibility(View.INVISIBLE);
+            rb12.setVisibility(View.INVISIBLE);
+            rb13.setVisibility(View.INVISIBLE);
+            rb14.setVisibility(View.INVISIBLE);
+            rb15.setVisibility(View.INVISIBLE);
+            rb16.setVisibility(View.INVISIBLE);
+            rb17.setVisibility(View.INVISIBLE);
+            btn5.setVisibility(View.INVISIBLE);
 
-        ttv3.setVisibility(View.INVISIBLE);
-        tt4.setVisibility(View.INVISIBLE);
-        tt5.setVisibility(View.INVISIBLE);
-        tt6.setVisibility(View.INVISIBLE);
-        tt7.setVisibility(View.INVISIBLE);
-        tt8.setVisibility(View.INVISIBLE);
-        tt9.setVisibility(View.INVISIBLE);
-        tt10.setVisibility(View.INVISIBLE);
-        tt11.setVisibility(View.INVISIBLE);
+            //disabling 5th ques
+            q4.setVisibility(View.INVISIBLE);
+            rb18.setVisibility(View.INVISIBLE);
+            rb19.setVisibility(View.INVISIBLE);
+            btn6.setVisibility(View.INVISIBLE);
 
 
-        iv2.setVisibility(View.INVISIBLE);
-        iv3.setVisibility(View.INVISIBLE);
-        iv4.setVisibility(View.INVISIBLE);
-        iv5.setVisibility(View.INVISIBLE);
+            //Generate
+            tv1.setVisibility(View.INVISIBLE);
+            tv2.setVisibility(View.INVISIBLE);
+            tv3.setVisibility(View.INVISIBLE);
+            tv4.setVisibility(View.INVISIBLE);
+            tv5.setVisibility(View.INVISIBLE);
+            tv6.setVisibility(View.INVISIBLE);
+            tv7.setVisibility(View.INVISIBLE);
+            tv8.setVisibility(View.INVISIBLE);
+            tv9.setVisibility(View.INVISIBLE);
 
-        //ll.setVisibility(View.INVISIBLE);
+            //
+            pb.setVisibility(View.INVISIBLE);
+            ttv.setVisibility(View.INVISIBLE);
+            ttv2.setVisibility(View.INVISIBLE);
+            iv.setVisibility(View.INVISIBLE);
 
-        rr1.setVisibility(View.INVISIBLE);
-        rr2.setVisibility(View.INVISIBLE);
-        rr3.setVisibility(View.INVISIBLE);
-        rr4.setVisibility(View.INVISIBLE);
+            ttv3.setVisibility(View.INVISIBLE);
+            tt4.setVisibility(View.INVISIBLE);
+            tt5.setVisibility(View.INVISIBLE);
+            tt6.setVisibility(View.INVISIBLE);
+            tt7.setVisibility(View.INVISIBLE);
+            tt8.setVisibility(View.INVISIBLE);
+            tt9.setVisibility(View.INVISIBLE);
+            tt10.setVisibility(View.INVISIBLE);
+            tt11.setVisibility(View.INVISIBLE);
 
-        //cv.setVisibility(View.INVISIBLE);
 
-        //cbtnn.setVisibility(View.INVISIBLE);
+            iv2.setVisibility(View.INVISIBLE);
+            iv3.setVisibility(View.INVISIBLE);
+            iv4.setVisibility(View.INVISIBLE);
+            iv5.setVisibility(View.INVISIBLE);
+
+            //ll.setVisibility(View.INVISIBLE);
+
+            rr1.setVisibility(View.INVISIBLE);
+            rr2.setVisibility(View.INVISIBLE);
+            rr3.setVisibility(View.INVISIBLE);
+            rr4.setVisibility(View.INVISIBLE);
+
+            //cv.setVisibility(View.INVISIBLE);
+
+            //cbtnn.setVisibility(View.INVISIBLE);
+        }
+        else{
+            Toast.makeText(Presc.this,"Atleast,Select one option!",Toast.LENGTH_LONG).show();
+        }
     }
 
     public void Ques4(View view)
     {
 
-        // first q
-        cb1.setVisibility(View.INVISIBLE);
-        cb2.setVisibility(View.INVISIBLE);
-        cb3.setVisibility(View.INVISIBLE);
-        cb4.setVisibility(View.INVISIBLE);
-        cb5.setVisibility(View.INVISIBLE);
-        cb6.setVisibility(View.INVISIBLE);
-        tv.setVisibility(View.INVISIBLE);
-        btn.setVisibility(View.INVISIBLE);
+     if(rg1.getCheckedRadioButtonId() != -1) {   // first q
+         cb1.setVisibility(View.INVISIBLE);
+         cb2.setVisibility(View.INVISIBLE);
+         cb3.setVisibility(View.INVISIBLE);
+         cb4.setVisibility(View.INVISIBLE);
+         cb5.setVisibility(View.INVISIBLE);
+         cb6.setVisibility(View.INVISIBLE);
+         tv.setVisibility(View.INVISIBLE);
+         btn.setVisibility(View.INVISIBLE);
 
-        //diabling secondquestion
-        q1.setVisibility(View.INVISIBLE);
-        rb1.setVisibility(View.INVISIBLE);
-        rb2.setVisibility(View.INVISIBLE);
-        rb3.setVisibility(View.INVISIBLE);
-        rb4.setVisibility(View.INVISIBLE);
-        rb5.setVisibility(View.INVISIBLE);
-        btn3.setVisibility(View.INVISIBLE);
+         //diabling secondquestion
+         q1.setVisibility(View.INVISIBLE);
+         rb1.setVisibility(View.INVISIBLE);
+         rb2.setVisibility(View.INVISIBLE);
+         rb3.setVisibility(View.INVISIBLE);
+         rb4.setVisibility(View.INVISIBLE);
+         rb5.setVisibility(View.INVISIBLE);
+         btn3.setVisibility(View.INVISIBLE);
 
-        //Third ques
-        q2.setVisibility(View.INVISIBLE);
-        rb6.setVisibility(View.INVISIBLE);
-        rb7.setVisibility(View.INVISIBLE);
-        rb8.setVisibility(View.INVISIBLE);
-        rb9.setVisibility(View.INVISIBLE);
-        rb10.setVisibility(View.INVISIBLE);
-        rb11.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
+         //Third ques
+         q2.setVisibility(View.INVISIBLE);
+         rb6.setVisibility(View.INVISIBLE);
+         rb7.setVisibility(View.INVISIBLE);
+         rb8.setVisibility(View.INVISIBLE);
+         rb9.setVisibility(View.INVISIBLE);
+         rb10.setVisibility(View.INVISIBLE);
+         rb11.setVisibility(View.INVISIBLE);
+         btn4.setVisibility(View.INVISIBLE);
 
-        //diabling fourth queston
-        q3.setVisibility(View.VISIBLE);
-        rb12.setVisibility(View.VISIBLE);
-        rb13.setVisibility(View.VISIBLE);
-        rb14.setVisibility(View.VISIBLE);
-        rb15.setVisibility(View.VISIBLE);
-        rb16.setVisibility(View.VISIBLE);
-        rb17.setVisibility(View.VISIBLE);
-        btn5.setVisibility(View.VISIBLE);
+         //diabling fourth queston
+         q3.setVisibility(View.VISIBLE);
+         rb12.setVisibility(View.VISIBLE);
+         rb13.setVisibility(View.VISIBLE);
+         rb14.setVisibility(View.VISIBLE);
+         rb15.setVisibility(View.VISIBLE);
+         rb16.setVisibility(View.VISIBLE);
+         rb17.setVisibility(View.VISIBLE);
+         btn5.setVisibility(View.VISIBLE);
 
-        //disabling 5th ques
-        q4.setVisibility(View.INVISIBLE);
-        rb18.setVisibility(View.INVISIBLE);
-        rb19.setVisibility(View.INVISIBLE);
-        btn6.setVisibility(View.INVISIBLE);
-
-
-        //Generate
-        tv1.setVisibility(View.INVISIBLE);
-        tv2.setVisibility(View.INVISIBLE);
-        tv3.setVisibility(View.INVISIBLE);
-        tv4.setVisibility(View.INVISIBLE);
-        tv5.setVisibility(View.INVISIBLE);
-        tv6.setVisibility(View.INVISIBLE);
-        tv7.setVisibility(View.INVISIBLE);
-        tv8.setVisibility(View.INVISIBLE);
-        tv9.setVisibility(View.INVISIBLE);
-
-        //progressbar
-        pb.setVisibility(View.INVISIBLE);
-        ttv.setVisibility(View.INVISIBLE);
-        ttv2.setVisibility(View.INVISIBLE);
-        iv.setVisibility(View.INVISIBLE);
-
-        ttv3.setVisibility(View.INVISIBLE);
-        tt4.setVisibility(View.INVISIBLE);
-        tt5.setVisibility(View.INVISIBLE);
-        tt6.setVisibility(View.INVISIBLE);
-        tt7.setVisibility(View.INVISIBLE);
-        tt8.setVisibility(View.INVISIBLE);
-        tt9.setVisibility(View.INVISIBLE);
-        tt10.setVisibility(View.INVISIBLE);
-        tt11.setVisibility(View.INVISIBLE);
+         //disabling 5th ques
+         q4.setVisibility(View.INVISIBLE);
+         rb18.setVisibility(View.INVISIBLE);
+         rb19.setVisibility(View.INVISIBLE);
+         btn6.setVisibility(View.INVISIBLE);
 
 
-        iv2.setVisibility(View.INVISIBLE);
-        iv3.setVisibility(View.INVISIBLE);
-        iv4.setVisibility(View.INVISIBLE);
-        iv5.setVisibility(View.INVISIBLE);
+         //Generate
+         tv1.setVisibility(View.INVISIBLE);
+         tv2.setVisibility(View.INVISIBLE);
+         tv3.setVisibility(View.INVISIBLE);
+         tv4.setVisibility(View.INVISIBLE);
+         tv5.setVisibility(View.INVISIBLE);
+         tv6.setVisibility(View.INVISIBLE);
+         tv7.setVisibility(View.INVISIBLE);
+         tv8.setVisibility(View.INVISIBLE);
+         tv9.setVisibility(View.INVISIBLE);
 
-        //ll.setVisibility(View.INVISIBLE);
+         //progressbar
+         pb.setVisibility(View.INVISIBLE);
+         ttv.setVisibility(View.INVISIBLE);
+         ttv2.setVisibility(View.INVISIBLE);
+         iv.setVisibility(View.INVISIBLE);
 
-        rr1.setVisibility(View.INVISIBLE);
-        rr2.setVisibility(View.INVISIBLE);
-        rr3.setVisibility(View.INVISIBLE);
-        rr4.setVisibility(View.INVISIBLE);
+         ttv3.setVisibility(View.INVISIBLE);
+         tt4.setVisibility(View.INVISIBLE);
+         tt5.setVisibility(View.INVISIBLE);
+         tt6.setVisibility(View.INVISIBLE);
+         tt7.setVisibility(View.INVISIBLE);
+         tt8.setVisibility(View.INVISIBLE);
+         tt9.setVisibility(View.INVISIBLE);
+         tt10.setVisibility(View.INVISIBLE);
+         tt11.setVisibility(View.INVISIBLE);
 
-        //cv.setVisibility(View.INVISIBLE);
 
-        //cbtnn.setVisibility(View.INVISIBLE);
+         iv2.setVisibility(View.INVISIBLE);
+         iv3.setVisibility(View.INVISIBLE);
+         iv4.setVisibility(View.INVISIBLE);
+         iv5.setVisibility(View.INVISIBLE);
+
+         //ll.setVisibility(View.INVISIBLE);
+
+         rr1.setVisibility(View.INVISIBLE);
+         rr2.setVisibility(View.INVISIBLE);
+         rr3.setVisibility(View.INVISIBLE);
+         rr4.setVisibility(View.INVISIBLE);
+
+         //cv.setVisibility(View.INVISIBLE);
+
+         //cbtnn.setVisibility(View.INVISIBLE);
+     }
+     else{
+         Toast.makeText(Presc.this,"Select,atleast one option!",Toast.LENGTH_LONG).show();
+     }
     }
 
     public void Ques5(View view)
     {
-        // first q
-        cb1.setVisibility(View.INVISIBLE);
-        cb2.setVisibility(View.INVISIBLE);
-        cb3.setVisibility(View.INVISIBLE);
-        cb4.setVisibility(View.INVISIBLE);
-        cb5.setVisibility(View.INVISIBLE);
-        cb6.setVisibility(View.INVISIBLE);
-        tv.setVisibility(View.INVISIBLE);
-        btn.setVisibility(View.INVISIBLE);
+        if(rg.getCheckedRadioButtonId() != -1) {
+            // first q
+            cb1.setVisibility(View.INVISIBLE);
+            cb2.setVisibility(View.INVISIBLE);
+            cb3.setVisibility(View.INVISIBLE);
+            cb4.setVisibility(View.INVISIBLE);
+            cb5.setVisibility(View.INVISIBLE);
+            cb6.setVisibility(View.INVISIBLE);
+            tv.setVisibility(View.INVISIBLE);
+            btn.setVisibility(View.INVISIBLE);
 
-        //diabling secondquestion
-        q1.setVisibility(View.INVISIBLE);
-        rb1.setVisibility(View.INVISIBLE);
-        rb2.setVisibility(View.INVISIBLE);
-        rb3.setVisibility(View.INVISIBLE);
-        rb4.setVisibility(View.INVISIBLE);
-        rb5.setVisibility(View.INVISIBLE);
-        btn3.setVisibility(View.INVISIBLE);
+            //diabling secondquestion
+            q1.setVisibility(View.INVISIBLE);
+            rb1.setVisibility(View.INVISIBLE);
+            rb2.setVisibility(View.INVISIBLE);
+            rb3.setVisibility(View.INVISIBLE);
+            rb4.setVisibility(View.INVISIBLE);
+            rb5.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
 
-        //Third ques
-        q2.setVisibility(View.INVISIBLE);
-        rb6.setVisibility(View.INVISIBLE);
-        rb7.setVisibility(View.INVISIBLE);
-        rb8.setVisibility(View.INVISIBLE);
-        rb9.setVisibility(View.INVISIBLE);
-        rb10.setVisibility(View.INVISIBLE);
-        rb11.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
+            //Third ques
+            q2.setVisibility(View.INVISIBLE);
+            rb6.setVisibility(View.INVISIBLE);
+            rb7.setVisibility(View.INVISIBLE);
+            rb8.setVisibility(View.INVISIBLE);
+            rb9.setVisibility(View.INVISIBLE);
+            rb10.setVisibility(View.INVISIBLE);
+            rb11.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
 
-        //diabling fourth queston
-        q3.setVisibility(View.INVISIBLE);
-        rb12.setVisibility(View.INVISIBLE);
-        rb13.setVisibility(View.INVISIBLE);
-        rb14.setVisibility(View.INVISIBLE);
-        rb15.setVisibility(View.INVISIBLE);
-        rb16.setVisibility(View.INVISIBLE);
-        rb17.setVisibility(View.INVISIBLE);
-        btn5.setVisibility(View.INVISIBLE);
-
-
-        //disabling 5th ques
-        q4.setVisibility(View.VISIBLE);
-        rb18.setVisibility(View.VISIBLE);
-        rb19.setVisibility(View.VISIBLE);
-        btn6.setVisibility(View.VISIBLE);
+            //diabling fourth queston
+            q3.setVisibility(View.INVISIBLE);
+            rb12.setVisibility(View.INVISIBLE);
+            rb13.setVisibility(View.INVISIBLE);
+            rb14.setVisibility(View.INVISIBLE);
+            rb15.setVisibility(View.INVISIBLE);
+            rb16.setVisibility(View.INVISIBLE);
+            rb17.setVisibility(View.INVISIBLE);
+            btn5.setVisibility(View.INVISIBLE);
 
 
-        //Generate
-        tv1.setVisibility(View.INVISIBLE);
-        tv2.setVisibility(View.INVISIBLE);
-        tv3.setVisibility(View.INVISIBLE);
-        tv4.setVisibility(View.INVISIBLE);
-        tv5.setVisibility(View.INVISIBLE);
-        tv6.setVisibility(View.INVISIBLE);
-        tv7.setVisibility(View.INVISIBLE);
-        tv8.setVisibility(View.INVISIBLE);
-        tv9.setVisibility(View.INVISIBLE);
-
-        //
-        pb.setVisibility(View.INVISIBLE);
-        ttv.setVisibility(View.INVISIBLE);
-        ttv2.setVisibility(View.INVISIBLE);
-        iv.setVisibility(View.INVISIBLE);
-
-        ttv3.setVisibility(View.INVISIBLE);
-        tt4.setVisibility(View.INVISIBLE);
-        tt5.setVisibility(View.INVISIBLE);
-        tt6.setVisibility(View.INVISIBLE);
-        tt7.setVisibility(View.INVISIBLE);
-        tt8.setVisibility(View.INVISIBLE);
-        tt9.setVisibility(View.INVISIBLE);
-        tt10.setVisibility(View.INVISIBLE);
-        tt11.setVisibility(View.INVISIBLE);
+            //disabling 5th ques
+            q4.setVisibility(View.VISIBLE);
+            rb18.setVisibility(View.VISIBLE);
+            rb19.setVisibility(View.VISIBLE);
+            btn6.setVisibility(View.VISIBLE);
 
 
-        iv2.setVisibility(View.INVISIBLE);
-        iv3.setVisibility(View.INVISIBLE);
-        iv4.setVisibility(View.INVISIBLE);
-        iv5.setVisibility(View.INVISIBLE);
+            //Generate
+            tv1.setVisibility(View.INVISIBLE);
+            tv2.setVisibility(View.INVISIBLE);
+            tv3.setVisibility(View.INVISIBLE);
+            tv4.setVisibility(View.INVISIBLE);
+            tv5.setVisibility(View.INVISIBLE);
+            tv6.setVisibility(View.INVISIBLE);
+            tv7.setVisibility(View.INVISIBLE);
+            tv8.setVisibility(View.INVISIBLE);
+            tv9.setVisibility(View.INVISIBLE);
 
-        //ll.setVisibility(View.INVISIBLE);
+            //
+            pb.setVisibility(View.INVISIBLE);
+            ttv.setVisibility(View.INVISIBLE);
+            ttv2.setVisibility(View.INVISIBLE);
+            iv.setVisibility(View.INVISIBLE);
 
-        rr1.setVisibility(View.INVISIBLE);
-        rr2.setVisibility(View.INVISIBLE);
-        rr3.setVisibility(View.INVISIBLE);
-        rr4.setVisibility(View.INVISIBLE);
+            ttv3.setVisibility(View.INVISIBLE);
+            tt4.setVisibility(View.INVISIBLE);
+            tt5.setVisibility(View.INVISIBLE);
+            tt6.setVisibility(View.INVISIBLE);
+            tt7.setVisibility(View.INVISIBLE);
+            tt8.setVisibility(View.INVISIBLE);
+            tt9.setVisibility(View.INVISIBLE);
+            tt10.setVisibility(View.INVISIBLE);
+            tt11.setVisibility(View.INVISIBLE);
 
-        //cv.setVisibility(View.INVISIBLE);
-        //cbtnn.setVisibility(View.INVISIBLE);
+
+            iv2.setVisibility(View.INVISIBLE);
+            iv3.setVisibility(View.INVISIBLE);
+            iv4.setVisibility(View.INVISIBLE);
+            iv5.setVisibility(View.INVISIBLE);
+
+            //ll.setVisibility(View.INVISIBLE);
+
+            rr1.setVisibility(View.INVISIBLE);
+            rr2.setVisibility(View.INVISIBLE);
+            rr3.setVisibility(View.INVISIBLE);
+            rr4.setVisibility(View.INVISIBLE);
+
+            //cv.setVisibility(View.INVISIBLE);
+            //cbtnn.setVisibility(View.INVISIBLE);
+        }
+        else{
+            Toast.makeText(Presc.this,"Atleast,select one option!",Toast.LENGTH_LONG).show();
+        }
     }
 
 
     public void Generate(View view)
     {
-        // first q
-        cb1.setVisibility(View.INVISIBLE);
-        cb2.setVisibility(View.INVISIBLE);
-        cb3.setVisibility(View.INVISIBLE);
-        cb4.setVisibility(View.INVISIBLE);
-        cb5.setVisibility(View.INVISIBLE);
-        cb6.setVisibility(View.INVISIBLE);
-        tv.setVisibility(View.INVISIBLE);
+        if(rg3.getCheckedRadioButtonId()!= -1) {
+            // first q
+            cb1.setVisibility(View.INVISIBLE);
+            cb2.setVisibility(View.INVISIBLE);
+            cb3.setVisibility(View.INVISIBLE);
+            cb4.setVisibility(View.INVISIBLE);
+            cb5.setVisibility(View.INVISIBLE);
+            cb6.setVisibility(View.INVISIBLE);
+            tv.setVisibility(View.INVISIBLE);
 
-        //diabling secondquestion
-        q1.setVisibility(View.INVISIBLE);
-        rb1.setVisibility(View.INVISIBLE);
-        rb2.setVisibility(View.INVISIBLE);
-        rb3.setVisibility(View.INVISIBLE);
-        rb4.setVisibility(View.INVISIBLE);
-        rb5.setVisibility(View.INVISIBLE);
-        btn3.setVisibility(View.INVISIBLE);
+            //diabling secondquestion
+            q1.setVisibility(View.INVISIBLE);
+            rb1.setVisibility(View.INVISIBLE);
+            rb2.setVisibility(View.INVISIBLE);
+            rb3.setVisibility(View.INVISIBLE);
+            rb4.setVisibility(View.INVISIBLE);
+            rb5.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
 
-        //Third ques
-        q2.setVisibility(View.INVISIBLE);
-        rb6.setVisibility(View.INVISIBLE);
-        rb7.setVisibility(View.INVISIBLE);
-        rb8.setVisibility(View.INVISIBLE);
-        rb9.setVisibility(View.INVISIBLE);
-        rb10.setVisibility(View.INVISIBLE);
-        rb11.setVisibility(View.INVISIBLE);
-        btn4.setVisibility(View.INVISIBLE);
+            //Third ques
+            q2.setVisibility(View.INVISIBLE);
+            rb6.setVisibility(View.INVISIBLE);
+            rb7.setVisibility(View.INVISIBLE);
+            rb8.setVisibility(View.INVISIBLE);
+            rb9.setVisibility(View.INVISIBLE);
+            rb10.setVisibility(View.INVISIBLE);
+            rb11.setVisibility(View.INVISIBLE);
+            btn4.setVisibility(View.INVISIBLE);
 
-        //diabling fourth queston
-        q3.setVisibility(View.INVISIBLE);
-        rb12.setVisibility(View.INVISIBLE);
-        rb13.setVisibility(View.INVISIBLE);
-        rb14.setVisibility(View.INVISIBLE);
-        rb15.setVisibility(View.INVISIBLE);
-        rb16.setVisibility(View.INVISIBLE);
-        rb17.setVisibility(View.INVISIBLE);
-        btn5.setVisibility(View.INVISIBLE);
-
-
-        //disabling 5th ques
-        q4.setVisibility(View.INVISIBLE);
-        rb18.setVisibility(View.INVISIBLE);
-        rb19.setVisibility(View.INVISIBLE);
-        btn6.setVisibility(View.INVISIBLE);
+            //diabling fourth queston
+            q3.setVisibility(View.INVISIBLE);
+            rb12.setVisibility(View.INVISIBLE);
+            rb13.setVisibility(View.INVISIBLE);
+            rb14.setVisibility(View.INVISIBLE);
+            rb15.setVisibility(View.INVISIBLE);
+            rb16.setVisibility(View.INVISIBLE);
+            rb17.setVisibility(View.INVISIBLE);
+            btn5.setVisibility(View.INVISIBLE);
 
 
-        //enabling graphics
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(200);
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                handler.post(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        ttv.setVisibility(View.VISIBLE);
-                        ttv2.setVisibility(View.VISIBLE);
-                        iv.setVisibility(View.VISIBLE);
-                        pb.setVisibility(View.VISIBLE);
-
-                    }
-                });
-
-            }
-        }).start();
+            //disabling 5th ques
+            q4.setVisibility(View.INVISIBLE);
+            rb18.setVisibility(View.INVISIBLE);
+            rb19.setVisibility(View.INVISIBLE);
+            btn6.setVisibility(View.INVISIBLE);
 
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while(Pstatus <100){
-                    Pstatus +=1;
-
-                    // Try to sleep the thread for 20 milliseconds
-                    try{
+            //enabling graphics
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
                         Thread.sleep(200);
-                    }catch(InterruptedException e){
+
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
-                    // Update the progress bar
-
                     handler.post(new Runnable() {
+
                         @Override
                         public void run() {
-                            pb.setProgress(Pstatus);
-                            // Show the progress on TextView
-                            ttv.setText(Pstatus+"%");
+                            ttv.setVisibility(View.VISIBLE);
+                            ttv2.setVisibility(View.VISIBLE);
+                            iv.setVisibility(View.VISIBLE);
+                            pb.setVisibility(View.VISIBLE);
+
                         }
                     });
+
                 }
-
-            }
-        }).start();
+            }).start();
 
 
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    while (Pstatus < 100) {
+                        Pstatus += 1;
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(20200);
+                        // Try to sleep the thread for 20 milliseconds
+                        try {
+                            Thread.sleep(200);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
 
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                        // Update the progress bar
+
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                pb.setProgress(Pstatus);
+                                // Show the progress on TextView
+                                ttv.setText(Pstatus + "%");
+                            }
+                        });
+                    }
+
                 }
-                handler.post(new Runnable() {
+            }).start();
 
-                    @Override
-                    public void run() {
-                        ttv.setVisibility(View.INVISIBLE);
-                        ttv2.setVisibility(View.INVISIBLE);
-                        iv.setVisibility(View.INVISIBLE);
-                        pb.setVisibility(View.INVISIBLE);
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(20200);
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    handler.post(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            ttv.setVisibility(View.INVISIBLE);
+                            ttv2.setVisibility(View.INVISIBLE);
+                            iv.setVisibility(View.INVISIBLE);
+                            pb.setVisibility(View.INVISIBLE);
                         /*tv1.setVisibility(View.VISIBLE);
                         tv2.setVisibility(View.VISIBLE);
                         tv3.setVisibility(View.VISIBLE);
@@ -748,45 +778,44 @@ public class Presc extends AppCompatActivity {
                         tv7.setVisibility(View.VISIBLE);
                         tv8.setVisibility(View.VISIBLE);
                         tv9.setVisibility(View.VISIBLE);*/
-                        ttv3.setVisibility(View.VISIBLE);
-                        tt4.setVisibility(View.VISIBLE);
-                        tt5.setVisibility(View.VISIBLE);
-                        tt6.setVisibility(View.VISIBLE);
-                        tt7.setVisibility(View.VISIBLE);
-                        tt8.setVisibility(View.VISIBLE);
-                        tt9.setVisibility(View.VISIBLE);
-                        tt10.setVisibility(View.VISIBLE);
-                        tt11.setVisibility(View.VISIBLE);
+                            ttv3.setVisibility(View.VISIBLE);
+                            tt4.setVisibility(View.VISIBLE);
+                            tt5.setVisibility(View.VISIBLE);
+                            tt6.setVisibility(View.VISIBLE);
+                            tt7.setVisibility(View.VISIBLE);
+                            tt8.setVisibility(View.VISIBLE);
+                            tt9.setVisibility(View.VISIBLE);
+                            tt10.setVisibility(View.VISIBLE);
+                            tt11.setVisibility(View.VISIBLE);
 
 
-                        iv2.setVisibility(View.VISIBLE);
-                        iv3.setVisibility(View.VISIBLE);
-                        iv4.setVisibility(View.VISIBLE);
-                        iv5.setVisibility(View.VISIBLE);
+                            iv2.setVisibility(View.VISIBLE);
+                            iv3.setVisibility(View.VISIBLE);
+                            iv4.setVisibility(View.VISIBLE);
+                            iv5.setVisibility(View.VISIBLE);
 
-                        //ll.setVisibility(View.VISIBLE);
+                            //ll.setVisibility(View.VISIBLE);
 
-                        rr1.setVisibility(View.VISIBLE);
-                        rr2.setVisibility(View.VISIBLE);
-                        rr3.setVisibility(View.VISIBLE);
-                        rr4.setVisibility(View.VISIBLE);
+                            rr1.setVisibility(View.VISIBLE);
+                            rr2.setVisibility(View.VISIBLE);
+                            rr3.setVisibility(View.VISIBLE);
+                            rr4.setVisibility(View.VISIBLE);
 
-                        //cbtnn.setVisibility(View.VISIBLE);
+                            //cbtnn.setVisibility(View.VISIBLE);
 
-                        //cv.setVisibility(View.VISIBLE);*/
-
-
-                    }
-                });
-
-            }
-        }).start();
+                            //cv.setVisibility(View.VISIBLE);*/
 
 
+                        }
+                    });
 
+                }
+            }).start();
+        }
+        else{
+            Toast.makeText(Presc.this,"Atleast,select one option!",Toast.LENGTH_LONG).show();
 
-
-
+        }
     }
 
     public void click(View view) {
