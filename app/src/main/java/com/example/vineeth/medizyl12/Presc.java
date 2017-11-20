@@ -2,10 +2,13 @@ package com.example.vineeth.medizyl12;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 //import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -36,8 +39,9 @@ public class Presc extends AppCompatActivity {
     //LinearLayout ll;
     RelativeLayout rr1,rr2,rr3,rr4;
     //CardView cv;
-
-
+    int feverindex,headindex,stomachindex,bodyindex,coldindex,diaindex;
+    SQLiteDatabase db;
+    Cursor c;
     ProgressBar pb;
     int Pstatus = 0;
 
@@ -245,6 +249,43 @@ public class Presc extends AppCompatActivity {
         //cbtnn.setVisibility(View.INVISIBLE);
 
         //cv.setVisibility(View.INVISIBLE);
+
+        //setting up database
+        try {
+             db = this.openOrCreateDatabase("Medicyl", MODE_PRIVATE, null);
+            db.execSQL("CREATE TABLE IF NOT EXISTS medcines(fever VARCHAR,headache VARCHAR,stomache VARCHAR,bodypains VARCHAR,cold VARCHAR,diahorrea VARCHAR");
+            db.execSQL("INSERT INTO medicines (fever,headache,stomache,bodypains,cold,diahorrea) VALUES ('Metamizole','Fenoprofen','Dolopar','Morphine','levocitrizen','Codeine')");
+            db.execSQL("INSERT INTO medicines (fever,headache,stomache,bodypains,cold,diahorrea) VALUES ('Ibruproen','Flubriprofen','Cyclopalm','Tylenol','Noscapine','Eldofer')");
+            db.execSQL("INSERT INTO medicines (fever,headache,stomache,bodypains,cold,diahorrea) VALUES ('Ketoprofen','Ketoprofen','Aztreonam','Motrin','Homatropine','Amicolon')");
+            db.execSQL("INSERT INTO medicines (fever,headache,stomache,bodypains,cold,diahorrea) VALUES ('Naproxen','Nabumetone','Doxycycline','Advil','Pseudoephedrine','Andial')");
+            db.execSQL("INSERT INTO medicines (fever,headache,stomache,bodypains,cold,diahorrea) VALUES ('Aspirin','Diclofenac','Budesonide','Naprosyn','Oxymetazoline','Becelac')");
+
+             c = db.rawQuery("SELECT * FROM medcines", null);
+
+            feverindex = c.getColumnIndex("fever");
+            headindex = c.getColumnIndex("headache");
+            stomachindex = c.getColumnIndex("stomache");
+            bodyindex = c.getColumnIndex("bodypains");
+            coldindex = c.getColumnIndex("cold");
+            diaindex = c.getColumnIndex("diahorrea");
+
+            c.moveToFirst();
+            while(c != null){
+                Log.i("fever",c.getString(feverindex));
+                Log.i("headache",c.getString(headindex));
+                Log.i("stomache",c.getString(stomachindex));
+                Log.i("bodypains",c.getString(bodyindex));
+                Log.i("cold",c.getString(coldindex));
+                Log.i("diahorrea",c.getString(diaindex));
+
+                c.moveToNext();
+
+            }
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
 
 
     }
@@ -822,7 +863,8 @@ public class Presc extends AppCompatActivity {
         if (cb1.isChecked()) {
             text1 = cb1.getText().toString();
             tt5.setText(text1 + "");
-            tt9.setText("Paracetamol/Dolo/Aspirin");
+            c = db.rawQuery("SELECT fever FROM medcines where fever=Aspirin",null);
+            tt9.setText("Dolo or Aspirin");
 
         }
         if (cb2.isChecked()) {

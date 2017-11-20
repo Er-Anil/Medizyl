@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         b1 = (Button) findViewById(R.id.p1);
         b2 = (Button) findViewById(R.id.m1);
-        iv2 = (ImageView) findViewById(R.id.imageView6); 
+        iv2 = (ImageView) findViewById(R.id.imageView6);
         iv1 = (ImageView) findViewById(R.id.imageView5);
     }
 
