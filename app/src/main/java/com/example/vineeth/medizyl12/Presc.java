@@ -1,5 +1,6 @@
 package com.example.vineeth.medizyl12;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 //import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
@@ -54,6 +56,7 @@ public class Presc extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         pb = (ProgressBar) findViewById(R.id.progressBar2);
+        //pb1 = (ProgressBar) findViewById(R.id.progressBar4);
        // cv = (CardView) findViewById(R.id.cview);
 
         rg = (RadioGroup) findViewById(R.id.radioGroup);
@@ -245,6 +248,7 @@ public class Presc extends AppCompatActivity {
         rr2.setVisibility(View.INVISIBLE);
         rr3.setVisibility(View.INVISIBLE);
         rr4.setVisibility(View.INVISIBLE);
+        //pb1.setVisibility(View.INVISIBLE);
 
         //cbtnn.setVisibility(View.INVISIBLE);
 
@@ -290,11 +294,13 @@ public class Presc extends AppCompatActivity {
 
     }
 
-    public void Ques2(View view)
+    public void Ques2(final View view)
     {
         if (((((cb1.isChecked() || cb2.isChecked()) || cb3.isChecked()) || cb4.isChecked()) || cb5.isChecked()) || cb6.isChecked()) {
 
             //disabling first question
+
+
         cb1.setVisibility(View.INVISIBLE);
         cb2.setVisibility(View.INVISIBLE);
         cb3.setVisibility(View.INVISIBLE);

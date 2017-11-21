@@ -87,32 +87,32 @@
         android:id="@+id/imageView5"
         android:layout_width="181dp"
         android:layout_height="136dp"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark_normal_background"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.29"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_light_normal_background" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="174dp"
         android:layout_height="142dp"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark_normal_background"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintVertical_bias="0.292" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.292"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_light_normal_background" />
 
 </android.support.constraint.ConstraintLayout>
