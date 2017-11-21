@@ -253,14 +253,14 @@ public class Presc extends AppCompatActivity {
         //setting up database
         try {
              db = this.openOrCreateDatabase("Medicyl", MODE_PRIVATE, null);
-            db.execSQL("CREATE TABLE IF NOT EXISTS medcines(fever VARCHAR,headache VARCHAR,stomache VARCHAR,bodypains VARCHAR,cold VARCHAR,diahorrea VARCHAR");
-            db.execSQL("INSERT INTO medicines (fever,headache,stomache,bodypains,cold,diahorrea) VALUES ('Metamizole','Fenoprofen','Dolopar','Morphine','levocitrizen','Codeine')");
-            db.execSQL("INSERT INTO medicines (fever,headache,stomache,bodypains,cold,diahorrea) VALUES ('Ibruproen','Flubriprofen','Cyclopalm','Tylenol','Noscapine','Eldofer')");
-            db.execSQL("INSERT INTO medicines (fever,headache,stomache,bodypains,cold,diahorrea) VALUES ('Ketoprofen','Ketoprofen','Aztreonam','Motrin','Homatropine','Amicolon')");
-            db.execSQL("INSERT INTO medicines (fever,headache,stomache,bodypains,cold,diahorrea) VALUES ('Naproxen','Nabumetone','Doxycycline','Advil','Pseudoephedrine','Andial')");
-            db.execSQL("INSERT INTO medicines (fever,headache,stomache,bodypains,cold,diahorrea) VALUES ('Aspirin','Diclofenac','Budesonide','Naprosyn','Oxymetazoline','Becelac')");
+            db.execSQL("CREATE TABLE IF NOT EXISTS medcines(id INT(3),fever VARCHAR,headache VARCHAR,stomache VARCHAR,bodypains VARCHAR,cold VARCHAR,diahorrea VARCHAR");
+            db.execSQL("INSERT INTO medicines (id,fever,headache,stomache,bodypains,cold,diahorrea) VALUES (1,'Metamizole','Fenoprofen','Dolopar','Morphine','levocitrizen','Codeine')");
+            db.execSQL("INSERT INTO medicines (id,fever,headache,stomache,bodypains,cold,diahorrea) VALUES (2,'Ibruproen','Flubriprofen','Cyclopalm','Tylenol','Noscapine','Eldofer')");
+            db.execSQL("INSERT INTO medicines (id,fever,headache,stomache,bodypains,cold,diahorrea) VALUES (3,'Ketoprofen','Ketoprofen','Aztreonam','Motrin','Homatropine','Amicolon')");
+            db.execSQL("INSERT INTO medicines (id,fever,headache,stomache,bodypains,cold,diahorrea) VALUES (4,'Naproxen','Nabumetone','Doxycycline','Advil','Pseudoephedrine','Andial')");
+            db.execSQL("INSERT INTO medicines (id,fever,headache,stomache,bodypains,cold,diahorrea) VALUES (5,'Aspirin','Diclofenac','Budesonide','Naprosyn','Oxymetazoline','Becelac')");
 
-             c = db.rawQuery("SELECT * FROM medcines", null);
+             /*c = db.rawQuery("SELECT * FROM medcines", null);
 
             feverindex = c.getColumnIndex("fever");
             headindex = c.getColumnIndex("headache");
@@ -280,7 +280,7 @@ public class Presc extends AppCompatActivity {
 
                 c.moveToNext();
 
-            }
+            }*/
         }
         catch(Exception e)
         {
@@ -863,13 +863,45 @@ public class Presc extends AppCompatActivity {
         if (cb1.isChecked()) {
             text1 = cb1.getText().toString();
             tt5.setText(text1 + "");
-            c = db.rawQuery("SELECT fever FROM medcines where fever=Aspirin",null);
+            try {
+                db = this.openOrCreateDatabase("Medicyl", MODE_PRIVATE, null);
+                c = db.rawQuery("SELECT fever FROM medcines", null);
+                feverindex = c.getColumnIndex("fever");
+                c.moveToFirst();
+                while (c != null) {
+                    String s1 = c.getString(feverindex);
+                    tt9.setText(s1+"");
+                    c.moveToNext();
+
+                }
+                c.close();
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+
             tt9.setText("Dolo or Aspirin");
 
         }
         if (cb2.isChecked()) {
             text2 = cb2.getText().toString();
             tt5.setText(text2 + "");
+            try {
+                db = this.openOrCreateDatabase("Medicyl", MODE_PRIVATE, null);
+                c = db.rawQuery("SELECT headache FROM medcines", null);
+                feverindex = c.getColumnIndex("headache");
+                c.moveToFirst();
+                while (c != null) {
+                    String s1 = c.getString(feverindex);
+                    tt9.setText(s1+"");
+                    c.moveToNext();
+
+                }
+                c.close();
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
             tt9.setText("Vertigon/Flurbiprofen");
         }
         if (cb3.isChecked()) {
